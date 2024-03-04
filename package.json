@@ -1,12 +1,33 @@
 {
-  "name": "labelandinvoices",
-  "version": "1.0.0",
-  "description": "��#\u0000 \u0000L\u0000a\u0000b\u0000e\u0000l\u0000a\u0000n\u0000d\u0000I\u0000n\u0000v\u0000o\u0000i\u0000c\u0000e\u0000s\u0000\r\u0000 \u0000",
-  "main": "cypress.config.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+"name": "orderspod",
+"version": "1.0.0",
+"description": "",
+"main": "index.js",
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+"author": "",
+"license": "ISC",
+"devDependencies": {
+  "cypress": "^13.6.3",
+  "cypress-downloadfile": "^1.2.3",
+  "cypress-file-upload": "^5.0.8",
+  "cypress-iframe": "^1.0.1",
+  "cypress-wait-until": "^2.0.1",
+  "cypress-xpath": "^2.0.1"
+},
+"browser": {
+  "fs": false,
+  "os": false,
+  "path": false
+},
+"dependencies": {
+  "git": "^0.1.5",
+  "jimp": "^0.3.5",
+  "pdf-parse": "^1.1.1",
+  "pdf-parse-fork": "^1.2.0",
+  "pdf2html": "^3.1.0",
+  "pdf2json": "^3.0.5",
+  "tesseract.js": "^5.0.3"
+}
 }
