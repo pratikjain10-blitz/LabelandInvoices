@@ -21,8 +21,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Install PdftoHtml
-        run: npm install pdf2parse
+      - name: Install pdf-parse
+        run: npm install pdf-parse
 
       - name: Cypress.io
         uses: cypress-io/github-action@v6.5.0
