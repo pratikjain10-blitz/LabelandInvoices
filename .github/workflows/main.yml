@@ -17,3 +17,14 @@ jobs:
         uses: cypress-io/github-action@v6.5.0
         with:
           start: npm start
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Install PdftoHtml
+        run: npm install pdf2parse
