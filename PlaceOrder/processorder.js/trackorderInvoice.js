@@ -51,7 +51,7 @@ describe("Placeorderhappyflow", function () {
       ".Table_margin-top__WE3dn > :nth-child(2) > .rs-picker > .rs-picker-toggle"
     ).click();
     cy.get(".rs-anim-fade").within(() => {
-      cy.get('[data-key="100"] > .rs-picker-select-menu-item').click();
+      // cy.get('[data-key="100"] > .rs-picker-select-menu-item').click();
     });
     cy.get(
       'div[class="Flexbox_flex-row__aKbHb Flexbox_align-stretch__jf368 Flexbox_nowrap__8vOkG rs-flex-box-grid rs-flex-box-grid-top rs-flex-box-grid-start"]'

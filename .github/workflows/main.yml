@@ -13,11 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
 
-      - name: Cypress.io
-        uses: cypress-io/github-action@v6.5.0
-        with:
-          start: npm start
-
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -28,3 +23,8 @@ jobs:
 
       - name: Install PdftoHtml
         run: npm install pdf2parse
+
+      - name: Cypress.io
+        uses: cypress-io/github-action@v6.5.0
+        with:
+          start: npm start
