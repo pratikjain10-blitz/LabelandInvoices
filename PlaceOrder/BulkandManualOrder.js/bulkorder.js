@@ -57,7 +57,7 @@ describe("bulk order placement", function () {
 
   it("InvalidComplete", function () {
     cy.get(".rs-input").type("test");
-    cy.wait(4000);
+    cy.wait(3000);
     cy.get('input[type="file"]')
       .attachFile("invalidnumber.csv")
       .then(() => {
