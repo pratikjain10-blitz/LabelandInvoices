@@ -17,16 +17,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "14"
+
+      - name: Install pdf2html and pdf-parse
+        run: npm install pdf2html pdf-parse
+
+      -  name: Install pdf2html 
+         run: npm install pdf2html 
+
+      - name: Install pdf-parse
+        run: npm install pdf-parse
+
       - name: Cypress run
         uses: cypress-io/github-action@v5
-      - uses: actions/upload-artifact@v3
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: cypress-videos
-          path: cypress/videos
-      
+
+     
