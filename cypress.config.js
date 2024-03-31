@@ -1,6 +1,6 @@
 const { defineConfig } = require("cypress");
 const { downloadFile } = require("cypress-downloadfile/lib/addPlugin");
-const { readPdf } = require("./scripts/readPdf");
+const { readPdf } = require("./scripts/readPdf.js");
 //const { promisify } = require("util");
 
 module.exports = defineConfig({

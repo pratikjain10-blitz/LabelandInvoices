@@ -31,21 +31,17 @@ describe("Placeorderhappyflow", function () {
       cy.wait(5000);
     });
     cy.get(".SideNav_sidenav-item-container__PAVyt > :nth-child(3)").click();
-    cy.get(":nth-child(4) > .Text_body1__jlAQm")
-      .click()
-      .then(() => {
-        cy.get(
-          '[href="/orders/track-orders"] > .Flexbox_flex-row__aKbHb > .Text_body2__0FftJ'
-        ).click();
-        cy.wait(5000);
-      });
+    cy.get(
+      '[href="/orders/track-orders"] > .Flexbox_flex-row__aKbHb > .Text_body2__0FftJ'
+    ).click();
+    cy.wait(5000);
   });
 
   it("LabelofDuplicate", function () {
     var data = 0;
 
     cy.get(
-      ".rs-col-xl-4.rs-col-sm-7 > .Flexbox_flex-row__aKbHb > .Text_body3__jmTqb"
+      ".rs-col-xl-4.rs-col-sm-7 > :nth-child(1) > .Flexbox_flex-row__aKbHb > .Text_body3__jmTqb"
     ).click();
     cy.wait(2000);
     cy.get(
