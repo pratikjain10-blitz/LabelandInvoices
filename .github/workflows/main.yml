@@ -23,10 +23,8 @@ jobs:
       - name: Run Cypress tests
         run: |
           npm run run:SystemClubbing || exit 0
-
-      - name: Get Allure history
-        if: ${{ success() }}
-        with:
+          if: ${{ success() }}
+            with:
           ref: gh-pages
           path: gh-pages
 
