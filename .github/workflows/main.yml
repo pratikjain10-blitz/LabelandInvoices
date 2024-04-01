@@ -26,7 +26,6 @@ jobs:
 
       - name: Get Allure history
         if: ${{ success() }}
-        uses: actions/checkout@v2
         with:
           ref: gh-pages
           path: gh-pages
