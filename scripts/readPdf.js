@@ -1,13 +1,13 @@
-import { fs }from 'fs';
-const path = require("path");
-const pdf = require("pdf-parse");
+import { readFileSync } from "fs";
+import { resolve as _resolve } from "path";
+import pdf from "pdf-parse";
 
-exports.readPdf = function (pathToPdf) {
+export function readPdf (pathToPdf) {
   return new Promise(function (resolve) {
-    const pdfPath = path.resolve(pathToPdf);
-    let dataBuffer = fs.readFileSync(pdfPath);
+    const pdfPath = _resolve(pathToPdf);
+    let dataBuffer = readFileSync(pdfPath);
     pdf(dataBuffer).then(function ({ text }) {
       resolve(text);
     });
   });
-};
+}
