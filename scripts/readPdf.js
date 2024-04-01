@@ -3,18 +3,11 @@ const path = require("path");
 const pdf = require("pdf-parse");
 
 exports.readPdf = function (pathToPdf) {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function (resolve) {
     const pdfPath = path.resolve(pathToPdf);
-    fs.readFile(pdfPath, function (err, dataBuffer) {
-      if (err) {
-        reject(err);
-        return;
-      }
-      pdf(dataBuffer).then(function ({ text }) {
-        resolve(text);
-      }).catch(function (error) {
-        reject(error);
-      });
+    let dataBuffer = fs.readFileSync(pdfPath);
+    pdf(dataBuffer).then(function ({ text }) {
+      resolve(text);
     });
   });
 };
