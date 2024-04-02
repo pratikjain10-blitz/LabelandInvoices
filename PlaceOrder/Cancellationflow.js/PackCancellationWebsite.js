@@ -43,9 +43,8 @@ for (let i = 0; i < 10; i++) {
       cy.wait(10000);
 
       cy.get(".SideNav_sidenav-item-container__PAVyt > :nth-child(3)").click();
-      cy.get(
-        "cy.get(":nth-child(4) > .Text_body1__jlAQm").click();"
-      ).click();
+      cy.get(":nth-child(4) > .Text_body1__jlAQm").click();
+
       cy.get('[href="/orders/process-orders"] > .Text_body2__0FftJ').click();
       cy.wait(5000)
         .then(() => {
@@ -174,9 +173,8 @@ for (let i = 0; i < 10; i++) {
       cy.get(".Button_button-primary__9i0Rz").contains("Verify OTP").click();
       cy.wait(10000);
       cy.get(".SideNav_sidenav-item-container__PAVyt > :nth-child(3)").click();
-      cy.get(
-        "cy.get(":nth-child(4) > .Text_body1__jlAQm").click();"
-      ).click();
+      cy.get(":nth-child(4) > .Text_body1__jlAQm").click();
+
       cy.get(
         '[href="/orders/process-orders"] > .Flexbox_flex-row__aKbHb > .Text_body2__0FftJ'
       ).click();

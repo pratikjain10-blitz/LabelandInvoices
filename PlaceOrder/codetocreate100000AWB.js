@@ -20,9 +20,8 @@ for (var i = 0; i, 200; i++) {
     });
     it("DiscountAmount", function () {
       cy.get(".SideNav_sidenav-item-container__PAVyt > :nth-child(3)").click();
-      cy.get(
-        "cy.get(":nth-child(4) > .Text_body1__jlAQm").click();"
-      ).click();
+      cy.get(":nth-child(4) > .Text_body1__jlAQm").click();
+
       cy.get('[href="/orders/place-order"] > .Text_body2__0FftJ').click();
       cy.get(
         ":nth-child(5) > :nth-child(1) > .Input_input-group__c6y0f > .rs-input"

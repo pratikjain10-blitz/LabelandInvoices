@@ -41,18 +41,16 @@ describe("NONduplicateOrderflow", function () {
     cy.wait(10000);
     cy.on("window:confirm", (str) => {
       cy.get(".SideNav_sidenav-item-container__PAVyt > :nth-child(3)").click();
-      cy.get(
-        "cy.get(":nth-child(4) > .Text_body1__jlAQm").click();"
-      ).click();
+      cy.get(":nth-child(4) > .Text_body1__jlAQm").click();
+
       cy.get(
         '[href="/orders/process-orders"] > .Flexbox_flex-row__aKbHb > .Text_body2__0FftJ'
       ).click();
       cy.wait(5000);
     });
     cy.get(".SideNav_sidenav-item-container__PAVyt > :nth-child(3)").click();
-    cy.get(
-      "cy.get(":nth-child(4) > .Text_body1__jlAQm").click();"
-    ).click();
+    cy.get(":nth-child(4) > .Text_body1__jlAQm").click();
+
     cy.get(
       '[href="/orders/process-orders"] > .Flexbox_flex-row__aKbHb > .Text_body2__0FftJ'
     ).click();

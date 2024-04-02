@@ -19,9 +19,8 @@ describe("Placeorderhappyflow", function () {
     });
     cy.wait(2000);
     cy.get(".SideNav_sidenav-item-container__PAVyt > :nth-child(3)").click();
-    cy.get(
-      "cy.get(":nth-child(4) > .Text_body1__jlAQm").click();"
-    ).click();
+    cy.get(":nth-child(4) > .Text_body1__jlAQm").click();
+
     cy.get('[href="/orders/place-order"] > .Text_body2__0FftJ').click();
     cy.get(
       ":nth-child(5) > :nth-child(1) > .Input_input-group__c6y0f > .rs-input"
@@ -92,9 +91,8 @@ describe("Placeorderhappyflow", function () {
     });
     cy.wait(20000);
     cy.get(".SideNav_sidenav-item-container__PAVyt > :nth-child(3)").click();
-    cy.get(
-      "cy.get(":nth-child(4) > .Text_body1__jlAQm").click();"
-    ).click();
+    cy.get(":nth-child(4) > .Text_body1__jlAQm").click();
+
     cy.get('[href="/orders/process-orders"] > .Text_body2__0FftJ').click();
     cy.wait(5000);
     cy.get(".rs-col-lg-5.rs-col-md-5 > .Text_body3__jmTqb").click();

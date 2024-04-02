@@ -22,31 +22,35 @@ function stringToBinary(str) {
 describe("Placeorderhappyflow", function () {
   beforeEach("Login", function () {
     cy.visit("https://v2.nushop-dashboard.kaip.in/login/");
-    cy.get(".rs-input").type("7908961320");
+    cy.get(".rs-input").type("9495760332");
     cy.get(".Button_button-primary__9i0Rz").contains("Generate OTP").click();
     cy.wait(2000);
     cy.get(".rs-input").type("0000");
     cy.get(".Button_button-primary__9i0Rz").contains("Verify OTP").click();
     cy.on("window:confirm", (str) => {
       cy.get(".SideNav_sidenav-item-container__PAVyt > :nth-child(3)").click();
-      cy.get(
-        "cy.get(":nth-child(4) > .Text_body1__jlAQm").click();"
-      ).click();
+      cy.get(":nth-child(4) > .Text_body1__jlAQm").click();
       cy.get('[href="/orders/process-orders"] > .Text_body2__0FftJ').click();
       cy.wait(5000);
     });
     cy.get(".SideNav_sidenav-item-container__PAVyt > :nth-child(3)").click();
+    cy.get(":nth-child(4) > .Text_body1__jlAQm").click();
     cy.get(
-      "cy.get(":nth-child(4) > .Text_body1__jlAQm").click();"
+      '[href="/orders/process-orders"] > .Flexbox_flex-row__aKbHb > .Text_body2__0FftJ'
     ).click();
-    cy.get('[href="/orders/process-orders"] > .Text_body2__0FftJ').click();
     cy.wait(5000);
   });
 
-  it("LabelofDuplicate", function () {
+  it.only("LabelofDuplicate", function () {
+    const binaryString = "��o�\u001e\n�|I��~�%��\u0016v3\\D��2;F^5\f...";
+    const byteArray = Uint8Array.from(binaryString, (c) => c.charCodeAt(0));
+    const decoder = new TextDecoder("utf-8"); // Use the appropriate encoding
+    const text = decoder.decode(byteArray);
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", text);
+
     //cy.get('.rs-flex-box-grid-item-4 > .rs-picker > .rs-picker-toggle').click()
 
-    cy.get(".rs-flex-box-grid-item-4 > .rs-picker > .rs-picker-toggle")
+    /**   cy.get(".rs-flex-box-grid-item-4 > .rs-picker > .rs-picker-toggle")
       .click()
       .then(() => {
         cy.get('label[class="RadioPicker_radio-label__p6kzr"]')
@@ -196,6 +200,6 @@ describe("Placeorderhappyflow", function () {
             });
         });
       }
-    );
+    ); */
   });
 });

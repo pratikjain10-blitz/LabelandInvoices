@@ -75,9 +75,8 @@ describe("Placeorder/Catalogue/SingleNormalOrder/Discountfunctionality", functio
       }
     });
     cy.get(".SideNav_sidenav-item-container__PAVyt > :nth-child(3)").click();
-    cy.get(
-      "cy.get(":nth-child(4) > .Text_body1__jlAQm").click();"
-    ).click();
+    cy.get(":nth-child(4) > .Text_body1__jlAQm").click();
+
     cy.get(
       '[href="/orders/place-order"] > .Flexbox_flex-row__aKbHb > .Text_body2__0FftJ'
     ).click();

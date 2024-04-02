@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run:SystemClubbing": "cypress run --spec 'PlaceOrder/processorder.js/trackorderInvoice.js' --env allure=true",
+    "allure:clear": "del /q allure-results\\* allure-report\\* cypress\\screenshots\\* 2>NUL",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:history": "move /Y allure-report\\history allure-results\\history && rmdir /s /q allure-report 2>NUL || true"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.2",
     "cypress": "^13.6.3",
     "cypress-downloadfile": "^1.2.3",
     "cypress-file-upload": "^5.0.8",
@@ -24,7 +29,7 @@
   "dependencies": {
     "git": "^0.1.5",
     "jimp": "^0.3.5",
-    "pdf-parse": "^1.1.1",
+    "pdf-parse": "1.0.9",
     "pdf-parse-fork": "^1.2.0",
     "pdf2html": "^3.1.0",
     "tesseract.js": "^5.0.3"
