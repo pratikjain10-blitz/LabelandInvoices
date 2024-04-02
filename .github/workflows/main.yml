@@ -34,7 +34,7 @@ jobs:
         run: npm run run:SystemClubbing
 
       - name: Generate Allure Report
-        run: allure generate allure-results --clean -o allure-report
+        run: npm run allure:report
 
       - name: Deploy report page
         uses: peaceiris/actions-gh-pages@v3
