@@ -28,39 +28,16 @@ jobs:
 
       - name: Run Cypress tests
         id: cypress-tests
-        run: npm run run:SystemClubbing || echo "Cypress tests failed"
+        run: npm run run:SystemClubbing
 
-      - name: Generate Allure report
-        if: always()  # Ensure this step always runs, regardless of previous steps
-        run: |
-          ALLURE_RESULTS_DIR="allure-results"
-          ALLURE_HISTORY_DIR="allure-history"
-          # Check if allure-results directory exists
-          if [ -d "$ALLURE_RESULTS_DIR" ]; then
-              # Move allure-results directory to allure-history directory
-              mv "$ALLURE_RESULTS_DIR" "$ALLURE_HISTORY_DIR"
-              echo "Allure report stored successfully."
-          else
-              echo "No Allure results found. Report not stored."
-          fi
+      - name: Generate Allure Report
+        run: npm run allure:report
 
-      - name: Get Allure history
-        uses: actions/checkout@v2
+      - name: Deploy report page
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          ref: gh-pages
-          path: allure-history
-
-      - name: Allure Report Action
-        uses: simple-elf/allure-report-action@master
-        with:
-          allure_results: allure-results
-          allure_history: allure-history
-          keep_reports: 20
-
-      - name: Deploy report to Github Pages
-        uses: peaceiris/actions-gh-pages@v2
-        env:
-          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          publish_branch: gh-pages
-          publish_dir: allure-history
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+          user_name: 'github-actions[bot]'
+          user_email: 'pratik.jain@blitzscale.co'
+          
