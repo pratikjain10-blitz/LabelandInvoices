@@ -57,4 +57,4 @@ jobs:
         with:
           slack_channel: "#cypress-orders-alerts"
           slack_message: "Allure report is available at ${{ steps.extract-report-link.outputs.url }}"
-          slack_webhook_url: "https://hooks.slack.com/services/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"
+          slack_webhook_url: "https://hooks.slack.com/services/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"
