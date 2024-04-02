@@ -43,3 +43,17 @@ jobs:
           publish_dir: ./allure-report
           user_name: 'github-actions[bot]'
           user_email: 'pratik.jain@blitzscale.co'
+
+      - name: Extract Allure report link
+        id: extract-report-link
+        run: |
+          REPORT_URL=$(cat allure-report/report-export.json | jq -r '.[0].url')
+          echo "::set-output name=url::$REPORT_URL"
+
+      - name: Send Allure report link to Slack
+        if: success()
+        uses: rtCamp/action-slack@v3
+        with:
+          slack_channel: "#cypress-orders-alerts"
+          slack_message: "Allure report is available at ${{ steps.extract-report-link.outputs.url }}"
+          slack_webhook_url: "https://hooks.slack.com/services/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"
