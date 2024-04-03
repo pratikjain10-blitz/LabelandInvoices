@@ -50,11 +50,4 @@ jobs:
           REPORT_URL=$(cat allure-report/report-export.json | jq -r '.[0].url')
           echo "::set-output name=url::$REPORT_URL"
 
-      - name: slack-send
-  # You may pin to the exact commit or the version.
-  # uses: slackapi/slack-github-action@6c661ce58804a1a20f6dc5fbee7f0381b469e001
-        uses: slackapi/slack-github-action@v1.25.0
-        with:
-          slack_channel: "#cypress-orders-alerts"
-          slack_message: "Allure report is available at ${{ steps.extract-report-link.outputs.url }}"
-          slack_webhook_url: "https://hooks.slack.com/services/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"
+     
